@@ -10,7 +10,7 @@
 
 ***
 
-### Thank You!!!
+### Thank You
 
 ![Sponsors](images/sponsorlogos.png)
 
