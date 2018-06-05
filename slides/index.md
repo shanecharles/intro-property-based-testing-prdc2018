@@ -237,6 +237,33 @@ What do you think is true about the code or process?
 
 ### Legacy Money
 
+Demo
+
+***
+
+### Generate Complex Types
+
+- Compose generators
+
+---
+### Arbitrary 
+
+> based on random choice or personal whim.
+
+---
+
+### FsCheck from C#
+
+    [lang=c#]
+    public static Gen<Person> PersonUnder18()
+    {
+        return
+            from name in ValidName()
+            from age in AgeUnder18()
+            from risk in Arb.Generate<RiskFactor>()
+            select new Person(name, age, risk);
+    }
+
 ***
 
 ### Model Based Testing
@@ -259,15 +286,6 @@ Represent a complex system with a simplified model.
 - Model
 - Both above
 - Specification
-
----
-
-### Benefits
-
-- Understanding of system
-- Identify specification deficiencies
-- Parallel execution for race conditions
-- Shrinking provides regression tests
 
 ***
 
