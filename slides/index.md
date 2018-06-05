@@ -35,7 +35,7 @@
 
     let getContactInfo = function
       | Twitter -> "@dead_stroke"
-      | Blog    -> "http://geekeh.com"
+      | Blog    -> "https://geekeh.com"
       | GitHub  -> "shanecharles"
 
 ***
@@ -243,7 +243,7 @@ Demo
 
 ### Generate Complex Types
 
-- Compose generators
+- Piece smaller generators together to create arbitraries
 
 ---
 ### Arbitrary 
@@ -295,8 +295,8 @@ Represent a complex system with a simplified model.
  - Forces us to better understand the domain
 - Not meant for building
 - The more complex the problem the better
+- Generative testing
 - Model based testing
- - Simplified representation of all or parts
 
 ---
 
@@ -322,5 +322,22 @@ Represent a complex system with a simplified model.
  - https://propertesting.com
 - Hypothesis
  - https://hypothesis.readthedocs.io
+
+***
+
+### Thank You
+
+- Slides: 
+ - https://shanecharles.github.io/intro-property-based-testing-prdc2018/
+- Code: 
+ - https://github.com/shanecharles/intro-property-based-testing-demos
+
+
+    type ContactType = | Twitter | Blog | GitHub
+
+    let getContactInfo = function
+      | Twitter -> "@dead_stroke"
+      | Blog    -> "https://geekeh.com"
+      | GitHub  -> "shanecharles"
 
 ***
