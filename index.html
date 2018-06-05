@@ -58,7 +58,7 @@
 <h3>Intro to Property Based Testing</h3>
 </section>
 <section >
-<h3>Thank You!!!</h3>
+<h3>Thank You</h3>
 <p><img src="images/sponsorlogos.png" alt="Sponsors" /></p>
 </section>
 <section >
@@ -80,15 +80,25 @@
 <span class="l">5: </span>
 <span class="l">6: </span>
 </pre></td>
-<td class="snippet"><pre class="fssnip highlighted"><code lang="fsharp"><span class="k">type</span> <span onmouseout="hideTip(event, 'fs1', 1)" onmouseover="showTip(event, 'fs1', 1)" class="t">ContactType</span> <span class="o">=</span> | <span onmouseout="hideTip(event, 'fs2', 2)" onmouseover="showTip(event, 'fs2', 2)" class="p">Twitter</span> | <span onmouseout="hideTip(event, 'fs3', 3)" onmouseover="showTip(event, 'fs3', 3)" class="p">Blog</span> | <span onmouseout="hideTip(event, 'fs4', 4)" onmouseover="showTip(event, 'fs4', 4)" class="p">GitHub</span>
+<td class="snippet"><pre class="fssnip highlighted"><code lang="fsharp"><span class="k">type</span> <span onmouseout="hideTip(event, 'fs1', 9)" onmouseover="showTip(event, 'fs1', 9)" class="i">ContactType</span> <span class="o">=</span> | <span onmouseout="hideTip(event, 'fs2', 10)" onmouseover="showTip(event, 'fs2', 10)" class="i">Twitter</span> | <span onmouseout="hideTip(event, 'fs3', 11)" onmouseover="showTip(event, 'fs3', 11)" class="i">Blog</span> | <span onmouseout="hideTip(event, 'fs4', 12)" onmouseover="showTip(event, 'fs4', 12)" class="i">GitHub</span>
 
-<span class="k">let</span> <span onmouseout="hideTip(event, 'fs5', 5)" onmouseover="showTip(event, 'fs5', 5)" class="f">getContactInfo</span> <span class="o">=</span> <span class="k">function</span>
-  | <span onmouseout="hideTip(event, 'fs2', 6)" onmouseover="showTip(event, 'fs2', 6)" class="p">Twitter</span> <span class="k">-&gt;</span> <span class="s">&quot;@dead_stroke&quot;</span>
-  | <span onmouseout="hideTip(event, 'fs3', 7)" onmouseover="showTip(event, 'fs3', 7)" class="p">Blog</span>    <span class="k">-&gt;</span> <span class="s">&quot;http://geekeh.com&quot;</span>
-  | <span onmouseout="hideTip(event, 'fs4', 8)" onmouseover="showTip(event, 'fs4', 8)" class="p">GitHub</span>  <span class="k">-&gt;</span> <span class="s">&quot;shanecharles&quot;</span>
+<span class="k">let</span> <span onmouseout="hideTip(event, 'fs5', 13)" onmouseover="showTip(event, 'fs5', 13)" class="f">getContactInfo</span> <span class="o">=</span> <span class="k">function</span>
+  | <span onmouseout="hideTip(event, 'fs2', 14)" onmouseover="showTip(event, 'fs2', 14)" class="p">Twitter</span> <span class="k">-&gt;</span> <span class="s">&quot;@dead_stroke&quot;</span>
+  | <span onmouseout="hideTip(event, 'fs3', 15)" onmouseover="showTip(event, 'fs3', 15)" class="p">Blog</span>    <span class="k">-&gt;</span> <span class="s">&quot;https://geekeh.com&quot;</span>
+  | <span onmouseout="hideTip(event, 'fs4', 16)" onmouseover="showTip(event, 'fs4', 16)" class="p">GitHub</span>  <span class="k">-&gt;</span> <span class="s">&quot;shanecharles&quot;</span>
 </code></pre></td>
 </tr>
 </table>
+</section>
+<section >
+<h3>Roadmap</h3>
+<ul>
+<li>What is property based testing</li>
+<li>Why do we care</li>
+<li>Getting started</li>
+<li>Property patterns</li>
+<li>Wrap it up</li>
+</ul>
 </section>
 <section >
 <section >
@@ -176,6 +186,7 @@ Testing through specific examples
 <li>Always active testing</li>
 <li>Generate actions or commands</li>
 <li>Race conditions</li>
+<li>Shrinkers</li>
 </ul>
 </section>
 </section>
@@ -285,6 +296,45 @@ Generate http requests
 </section>
 </section>
 <section >
+<h3>Legacy Money</h3>
+<p>Demo</p>
+</section>
+<section >
+<section >
+<h3>Generate Complex Types</h3>
+<ul>
+<li>Piece smaller generators together to create arbitraries</li>
+</ul>
+</section>
+<section >
+<h3>Arbitrary</h3>
+<blockquote>
+<p>based on random choice or personal whim.</p>
+</blockquote>
+</section>
+<section >
+<h3>FsCheck from C#</h3>
+<table class="pre"><tr><td class="lines"><pre class="fssnip"><span class="l">1: </span>
+<span class="l">2: </span>
+<span class="l">3: </span>
+<span class="l">4: </span>
+<span class="l">5: </span>
+<span class="l">6: </span>
+<span class="l">7: </span>
+<span class="l">8: </span>
+</pre></td>
+<td class="snippet"><pre class="fssnip"><code lang="c#">public static Gen&lt;Person&gt; PersonUnder18()
+{
+    return
+        from name in ValidName()
+        from age in AgeUnder18()
+        from risk in Arb.Generate&lt;RiskFactor&gt;()
+        select new Person(name, age, risk);
+}
+</code></pre></td></tr></table>
+</section>
+</section>
+<section >
 <section >
 <h3>Model Based Testing</h3>
 <p>Represent a complex system with a simplified model.</p>
@@ -306,15 +356,6 @@ Generate http requests
 <li>Specification</li>
 </ul>
 </section>
-<section >
-<h3>Benefits</h3>
-<ul>
-<li>Understanding of system</li>
-<li>Identify specification deficiencies</li>
-<li>Parallel execution for race conditions</li>
-<li>Shrinking provides regression tests</li>
-</ul>
-</section>
 </section>
 <section >
 <section >
@@ -328,12 +369,8 @@ Coming up with Properties can be difficult
 </li>
 <li>Not meant for building</li>
 <li>The more complex the problem the better</li>
-<li>
-Model based testing
-<ul>
-<li>Simplified representation of all or parts</li>
-</ul>
-</li>
+<li>Generative testing</li>
+<li>Model based testing</li>
 </ul>
 </section>
 <section >
@@ -372,6 +409,39 @@ Hypothesis
 </ul>
 </li>
 </ul>
+</section>
+<section >
+<h3>Thank You</h3>
+<ul>
+<li>
+Slides:
+<ul>
+<li><a href="https://shanecharles.github.io/intro-property-based-testing-prdc2018/">https://shanecharles.github.io/intro-property-based-testing-prdc2018/</a></li>
+</ul>
+</li>
+<li>
+Code:
+<ul>
+<li><a href="https://github.com/shanecharles/intro-property-based-testing-demos">https://github.com/shanecharles/intro-property-based-testing-demos</a></li>
+</ul>
+</li>
+</ul>
+<table class="pre"><tr><td class="lines"><pre class="fssnip"><span class="l">1: </span>
+<span class="l">2: </span>
+<span class="l">3: </span>
+<span class="l">4: </span>
+<span class="l">5: </span>
+<span class="l">6: </span>
+</pre></td>
+<td class="snippet"><pre class="fssnip highlighted"><code lang="fsharp"><span class="k">type</span> <span onmouseout="hideTip(event, 'fs1', 9)" onmouseover="showTip(event, 'fs1', 9)" class="i">ContactType</span> <span class="o">=</span> | <span onmouseout="hideTip(event, 'fs2', 10)" onmouseover="showTip(event, 'fs2', 10)" class="i">Twitter</span> | <span onmouseout="hideTip(event, 'fs3', 11)" onmouseover="showTip(event, 'fs3', 11)" class="i">Blog</span> | <span onmouseout="hideTip(event, 'fs4', 12)" onmouseover="showTip(event, 'fs4', 12)" class="i">GitHub</span>
+
+<span class="k">let</span> <span onmouseout="hideTip(event, 'fs5', 13)" onmouseover="showTip(event, 'fs5', 13)" class="f">getContactInfo</span> <span class="o">=</span> <span class="k">function</span>
+  | <span onmouseout="hideTip(event, 'fs2', 14)" onmouseover="showTip(event, 'fs2', 14)" class="p">Twitter</span> <span class="k">-&gt;</span> <span class="s">&quot;@dead_stroke&quot;</span>
+  | <span onmouseout="hideTip(event, 'fs3', 15)" onmouseover="showTip(event, 'fs3', 15)" class="p">Blog</span>    <span class="k">-&gt;</span> <span class="s">&quot;https://geekeh.com&quot;</span>
+  | <span onmouseout="hideTip(event, 'fs4', 16)" onmouseover="showTip(event, 'fs4', 16)" class="p">GitHub</span>  <span class="k">-&gt;</span> <span class="s">&quot;shanecharles&quot;</span>
+</code></pre></td>
+</tr>
+</table>
 </section>
 
 
