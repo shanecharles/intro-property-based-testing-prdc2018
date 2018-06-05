@@ -40,6 +40,16 @@
 
 ***
 
+### Roadmap
+
+- What is property based testing
+- Why do we care
+- Getting started
+- Property patterns
+- Wrap it up
+
+***
+
 ### What is property based testing?
 
 > The thing that QuickCheck does.<br/>
@@ -122,6 +132,7 @@ Any positive number multiplied by negative one will have a result less than zero
 - Always active testing
 - Generate actions or commands
 - Race conditions
+- Shrinkers
 
 ***
 
@@ -221,6 +232,10 @@ What do you think is true about the code or process?
  - Accepted HttpStatuses
 
 ![crash](images/crash.png)
+
+***
+
+### Legacy Money
 
 ***
 
