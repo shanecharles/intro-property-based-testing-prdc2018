@@ -128,6 +128,7 @@ Any positive number multiplied by negative one will have a result less than zero
 
 ### Property Advantages
 
+- Multiple properties
 - Generative testing 
 - Always active testing
 - Generate actions or commands
