@@ -237,7 +237,7 @@ What do you think is true about the code or process?
 
 ### Legacy Money
 
-Demo
+Shrinking in action.
 
 ***
 
