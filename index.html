@@ -2,8 +2,8 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>Full Fun Web with SAFE Stack</title>
-    <meta name="description" content="Introduction to the SAFE web stack.">
+    <title>Intro to Property Based Testing</title>
+    <meta name="description" content="An introduction to property based testing.">
     <meta name="author" content="Shane Charles">
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
@@ -51,12 +51,15 @@
 <div class="tip" id="fs3">union case ContactType.Blog: ContactType</div>
 <div class="tip" id="fs4">union case ContactType.GitHub: ContactType</div>
 <div class="tip" id="fs5">val getContactInfo : _arg1:ContactType -&gt; string<br /><br />Full name: index.getContactInfo</div>
-<div class="tip" id="fs6">val id : x:&#39;T -&gt; &#39;T<br /><br />Full name: Microsoft.FSharp.Core.Operators.id</div>
 
         <!-- Any section element inside of this container is displayed as a slide -->
         <div class="slides">
             <section >
-<h3>Full Fun Web with SAFE Stack</h3>
+<h3>Intro to Property Based Testing</h3>
+</section>
+<section >
+<h3>Thank You</h3>
+<p><img src="images/sponsorlogos.png" alt="Sponsors" /></p>
 </section>
 <section >
 <!-- .slide: class="two-floating-elements" -->
@@ -77,364 +80,353 @@
 <span class="l">5: </span>
 <span class="l">6: </span>
 </pre></td>
-<td class="snippet"><pre class="fssnip highlighted"><code lang="fsharp"><span class="k">type</span> <span onmouseout="hideTip(event, 'fs1', 11)" onmouseover="showTip(event, 'fs1', 11)" class="i">ContactType</span> <span class="o">=</span> | <span onmouseout="hideTip(event, 'fs2', 12)" onmouseover="showTip(event, 'fs2', 12)" class="i">Twitter</span> | <span onmouseout="hideTip(event, 'fs3', 13)" onmouseover="showTip(event, 'fs3', 13)" class="i">Blog</span> | <span onmouseout="hideTip(event, 'fs4', 14)" onmouseover="showTip(event, 'fs4', 14)" class="i">GitHub</span>
+<td class="snippet"><pre class="fssnip highlighted"><code lang="fsharp"><span class="k">type</span> <span onmouseout="hideTip(event, 'fs1', 9)" onmouseover="showTip(event, 'fs1', 9)" class="i">ContactType</span> <span class="o">=</span> | <span onmouseout="hideTip(event, 'fs2', 10)" onmouseover="showTip(event, 'fs2', 10)" class="i">Twitter</span> | <span onmouseout="hideTip(event, 'fs3', 11)" onmouseover="showTip(event, 'fs3', 11)" class="i">Blog</span> | <span onmouseout="hideTip(event, 'fs4', 12)" onmouseover="showTip(event, 'fs4', 12)" class="i">GitHub</span>
 
-<span class="k">let</span> <span onmouseout="hideTip(event, 'fs5', 15)" onmouseover="showTip(event, 'fs5', 15)" class="f">getContactInfo</span> <span class="o">=</span> <span class="k">function</span>
-  | <span onmouseout="hideTip(event, 'fs2', 16)" onmouseover="showTip(event, 'fs2', 16)" class="p">Twitter</span> <span class="k">-&gt;</span> <span class="s">&quot;@dead_stroke&quot;</span>
-  | <span onmouseout="hideTip(event, 'fs3', 17)" onmouseover="showTip(event, 'fs3', 17)" class="p">Blog</span>    <span class="k">-&gt;</span> <span class="s">&quot;https://geekeh.com&quot;</span>
-  | <span onmouseout="hideTip(event, 'fs4', 18)" onmouseover="showTip(event, 'fs4', 18)" class="p">GitHub</span>  <span class="k">-&gt;</span> <span class="s">&quot;shanecharles&quot;</span>
+<span class="k">let</span> <span onmouseout="hideTip(event, 'fs5', 13)" onmouseover="showTip(event, 'fs5', 13)" class="f">getContactInfo</span> <span class="o">=</span> <span class="k">function</span>
+  | <span onmouseout="hideTip(event, 'fs2', 14)" onmouseover="showTip(event, 'fs2', 14)" class="p">Twitter</span> <span class="k">-&gt;</span> <span class="s">&quot;@dead_stroke&quot;</span>
+  | <span onmouseout="hideTip(event, 'fs3', 15)" onmouseover="showTip(event, 'fs3', 15)" class="p">Blog</span>    <span class="k">-&gt;</span> <span class="s">&quot;https://geekeh.com&quot;</span>
+  | <span onmouseout="hideTip(event, 'fs4', 16)" onmouseover="showTip(event, 'fs4', 16)" class="p">GitHub</span>  <span class="k">-&gt;</span> <span class="s">&quot;shanecharles&quot;</span>
 </code></pre></td>
 </tr>
 </table>
 </section>
 <section >
-<h3>You will see</h3>
+<h3>Roadmap</h3>
 <ul>
-<li>What is SAFE Stack</li>
-<li>Setup</li>
-<li>Fable + Elmish</li>
-<li>Saturn</li>
-<li>Azure</li>
-<li>Summary</li>
-</ul>
-</section>
-<section >
-<h3>You will not see</h3>
-<ul>
-<li>Nice Aesthetics</li>
-<li>Good UX</li>
-<li>Any Security</li>
+<li>What is property based testing</li>
+<li>Why do we care</li>
+<li>Getting started</li>
+<li>Property patterns</li>
+<li>Wrap it up</li>
 </ul>
 </section>
 <section >
 <section >
-<h3>SAFE Stack</h3>
-<ul>
-<li>Web Stack</li>
-<li>F# in the front</li>
-<li>F# in the back</li>
-</ul>
-</section>
-<section >
-<h3>SAFE History</h3>
-<ul>
-<li>Server</li>
-<li>Azure</li>
-<li>Fable</li>
-<li>Elmish</li>
-</ul>
-</section>
-<section >
-<h3>Server?</h3>
-<ul>
-<li>Suave</li>
-<li>Azure</li>
-<li>Fable</li>
-<li>Elmish</li>
-</ul>
-</section>
-<section >
-<h3>+ Giraffe</h3>
-<ul>
-<li><code>choose [suave; giraffe]</code></li>
-<li>Azure</li>
-<li>Fable</li>
-<li>Elmish</li>
-</ul>
-</section>
-<section >
-<h3>+ Saturn</h3>
-<ul>
-<li><code>choose [suave; giraffe; saturn]</code></li>
-<li>Azure</li>
-<li>Fable</li>
-<li>Elmish</li>
-</ul>
-</section>
-<section >
-<h3>No Longer Suave</h3>
-<ul>
-<li><code>choose [giraffe; saturn]</code></li>
-<li>Azure</li>
-<li>Fable</li>
-<li>Elmish</li>
-</ul>
-</section>
-<section >
-<h3>Current SAFE Defaults</h3>
-<ul>
-<li>Saturn</li>
-<li>Azure</li>
-<li>Fable</li>
-<li>Elmish</li>
-</ul>
-</section>
-</section>
-<section >
-<section >
-<h3>Setup Requirements</h3>
-<ul>
-<li>dotnet core (2.+)</li>
-<li><code>yarn</code> and <code>node</code></li>
-<li><code>fake</code> command line tool</li>
-</ul>
-</section>
-<section >
-<h3>Installing Fake</h3>
+<h3>What is property based testing?</h3>
 <blockquote>
-<p>dotnet tool install fake-cli -g</p>
+<p>The thing that QuickCheck does.<br/></p>
+<p>~ almost everybody</p>
 </blockquote>
+</section>
+<section >
+<h3>Not Quite</h3>
+<table class="pre"><tr><td class="lines"><pre class="fssnip"><span class="l">1: </span>
+<span class="l">2: </span>
+<span class="l">3: </span>
+<span class="l">4: </span>
+</pre></td>
+<td class="snippet"><pre class="fssnip"><code lang="C#">public class SomeClass 
+{
+    public string PropertyToTest { get; set; }
+}
+</code></pre></td></tr></table>
+</section>
+<section >
+<h3>Merriam-Webster Definition of Property</h3>
 <ul>
-<li>Linux/OSx: <code>~/.dotnet/tools</code></li>
-<li>Windows: <code>%USERPROFILE%\.dotnet\tools</code></li>
+<li>a quality or trait belonging and especially peculiar to an individual or thing</li>
+<li>an attribute common to all members of a class</li>
 </ul>
 </section>
 <section >
-<h3>Installing and Running SAFE</h3>
+<h3>Property Based Testing</h3>
+<p>A trait belonging to a process with results common to all members of a set of inputs.</p>
+</section>
+<section >
+<h3>Example</h3>
+<p>Any positive number multiplied by negative one will have a result less than zero.</p>
+<ul>
+<li>Process: <code>(*) -1</code></li>
+<li>Input Set: <code>Choose [1 .. ]</code></li>
+<li>Result: <code>&lt; 0</code></li>
+</ul>
+</section>
+</section>
+<section >
+<section >
+<h3>We Already Have TDD</h3>
+<ul>
+<li>unit tests</li>
+<li>integration tests</li>
+</ul>
+</section>
+<section >
+<h3>Test, Fail, Fix</h3>
+<p><img src="images/wile-coyote-fail1.gif" alt="fail" /></p>
+</section>
+<section >
+<h3>Test, Fail, Fix</h3>
+<p><img src="images/wile-coyote-fail2.gif" alt="fail" /></p>
+</section>
+<section >
+<h3>The Power of TDD</h3>
+<ul>
+<li>Build code one failure at a time</li>
+<li>Growth with stability</li>
+<li>Regression checks</li>
+</ul>
+</section>
+<section >
+<h3>TDD has Limits</h3>
 <ul>
 <li>
-Command Line
+Testing through specific examples
 <ul>
-<li>dotnet new -i SAFE.Template</li>
-<li>dotnet new SAFE</li>
-<li>fake build --target run</li>
+<li>How many is enough?</li>
 </ul>
 </li>
+<li>Active becomes passive testing</li>
+<li>Legacy code with no tests</li>
 </ul>
-<p><img src="images/bored.gif" alt="bored" /></p>
-</section>
 </section>
 <section >
-<section >
-<h3>Fable</h3>
+<h3>Property Advantages</h3>
 <ul>
-<li>F# to javascript compiler</li>
-<li>
-Not limited to SAFE Stack
-<ul>
-<li>can be used independently</li>
-</ul>
-</li>
-<li>Recently released version 2</li>
+<li>Multiple properties</li>
+<li>Generative testing</li>
+<li>Always active testing</li>
+<li>Generate actions or commands</li>
+<li>Race conditions</li>
+<li>Shrinkers</li>
 </ul>
 </section>
-<section >
-<h3>Elmish</h3>
-<ul>
-<li>front-end paradigm</li>
-<li>
-Elm Architecture
-<ul>
-<li>Model</li>
-<li>View</li>
-<li>Update</li>
-</ul>
-</li>
-</ul>
 </section>
 <section >
-<h3>Flow</h3>
-<p><img src="images/elm_flow.png" alt="Flow" /></p>
-</section>
 <section >
-<h3>Notifications</h3>
-<ul>
-<li>Messages: Strongly typed</li>
-<li>Commands: state events</li>
-<li>Subscriptions: external events</li>
-</ul>
-</section>
-<section >
-<h3>Flow State</h3>
-<p><img src="images/elm_flow_details.png" alt="Flow" /></p>
-</section>
-<section >
-<h3>Required Functions</h3>
-<ul>
-<li>init</li>
-<li>update</li>
-<li>view</li>
-</ul>
-</section>
-<section >
-<h3>CSS</h3>
+<h3>Where to start</h3>
 <ul>
 <li>
-Fulma
+Get a chunk of code or a library you commonly use
 <ul>
-<li>Bulma bindings</li>
-<li>based on Flexbox</li>
-<li>
-modifiers use a prefix
-<ul>
-<li><code>is-</code></li>
-<li><code>has-</code></li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</section>
-<section >
-<h3>Demos</h3>
-</section>
-</section>
-<section >
-<section >
-<h3>Saturn</h3>
-<ul>
-<li>Standalone Server</li>
-<li>Abstraction on Giraffe</li>
-<li>Inspired by Phoenix (Elixir)</li>
-<li>MVC pattern</li>
-</ul>
-</section>
-<section >
-<h3>Opinionated</h3>
-<ul>
-<li>
-Convention over configuration
-<ul>
-<li>Dapper</li>
-<li>Simple.Migrations</li>
-</ul>
-</li>
-<li>
-Scaffolding scripts
-<ul>
-<li><code>dotnet saturn</code> command line tool</li>
+<li>Don't start with nothing (this isn't TDD)</li>
 </ul>
 </li>
 </ul>
 </section>
 <section >
-<h3>Computation Expressions</h3>
+<h5>Find your Testing Library</h5>
+<p><img src="images/testing-libraries.png" alt="libs" /></p>
+<p><a href="http://hypothesis.works/articles/quickcheck-in-every-language/"><a href="http://hypothesis.works/articles/quickcheck-in-every-language/">http://hypothesis.works/articles/quickcheck-in-every-language/</a></a></p>
+</section>
+<section >
+<h3>Make Some Assumptions</h3>
+<p>What do you think is true about the code or process?</p>
+</section>
+<section >
+<h3>Generate inputs</h3>
+<p><img src="images/haskell.png" alt="haskell" /></p>
+</section>
+<section >
+<h3>Question Everything</h3>
 <ul>
-<li>pipeline</li>
-<li>controller</li>
-<li>
-router
-<ul>
-<li>formerly <code>scope</code></li>
+<li>Is it an actual failure or a problem with property?</li>
 </ul>
-</li>
-</ul>
+<blockquote>
+<p>Properties can require a lot of thought and can be difficult to come up with.</p>
+</blockquote>
 </section>
 </section>
 <section >
 <section >
-<h3>Deploy to Azure</h3>
+<h3>Patterns for Properties</h3>
 <ul>
-<li>
-Docker
-<ul>
-<li>dotnet new SAFE --deploy docker</li>
-</ul>
-</li>
-<li>
-App Service
-<ul>
-<li>dotnet new SAFE --deploy azure</li>
-</ul>
-</li>
+<li>Starting point for creating properties</li>
 </ul>
 </section>
 <section >
-<h3>Azure App Service Setup</h3>
+<h3>There and Back</h3>
 <ul>
-<li>Azure Active Directory</li>
+<li>Serialization and deserialization</li>
+<li>Set value and get value</li>
+</ul>
+<p><img src="images/there_and_back.png" alt="There and Back" /></p>
+</section>
+<section >
+<h3>Different Paths Same Destination</h3>
+<ul>
+<li>x + y = y + x</li>
+<li>x + x = x * 2</li>
+</ul>
+<p><img src="images/same_destination.png" alt="Same Destination" /></p>
+</section>
+<section >
+<h3>Some Things Never Change</h3>
+<ul>
+<li>Size of collection</li>
+<li>elements of a collection after a sort</li>
+</ul>
+<p><img src="images/some_never_change.png" alt="Some Never Change" /></p>
+</section>
+<section >
+<h3>Hard to Prove Easy to Verify</h3>
+<ul>
 <li>
-Create new App Registration
+String tokenizer
 <ul>
-<li>
-Required Permissions
-<ul>
-<li>Enable "Windows Azure Service Management API"</li>
+<li>Verify by concatenating the tokens</li>
 </ul>
 </li>
-<li>Copy Application ID</li>
+<li>Sorting</li>
+</ul>
+<p><img src="images/verify.png" alt="verify" /></p>
+</section>
+<section >
+<h3>Test Oracle</h3>
+<ul>
+<li>
+Compare your results to a different 'proven' solution
+<ul>
+<li>Performance optimizations</li>
 </ul>
 </li>
+</ul>
+<p><img src="images/test_oracle.png" alt="oracle" /></p>
+</section>
+<section >
+<h3>Should not crash</h3>
+<ul>
+<li>
+Generate http requests
+<ul>
+<li>Get, Post, etc.</li>
+<li>Accepted HttpStatuses</li>
+</ul>
+</li>
+</ul>
+<p><img src="images/crash.png" alt="crash" /></p>
+</section>
+</section>
+<section >
+<h3>Legacy Money</h3>
+<p>Shrinking in action.</p>
+</section>
+<section >
+<section >
+<h3>Generate Complex Types</h3>
+<ul>
+<li>Piece smaller generators together to create arbitraries</li>
 </ul>
 </section>
 <section >
-<h3>Application Directory</h3>
+<h3>Arbitrary</h3>
+<blockquote>
+<p>based on random choice or personal whim.</p>
+</blockquote>
+</section>
+<section >
+<h3>FsCheck from C#</h3>
 <table class="pre"><tr><td class="lines"><pre class="fssnip"><span class="l">1: </span>
 <span class="l">2: </span>
 <span class="l">3: </span>
 <span class="l">4: </span>
 <span class="l">5: </span>
+<span class="l">6: </span>
+<span class="l">7: </span>
+<span class="l">8: </span>
 </pre></td>
-<td class="snippet"><pre class="fssnip highlighted"><code lang="fsharp"><span class="i">fake</span> <span class="i">build</span> <span class="o">--</span><span class="i">target</span> <span class="i">appservice</span> 
-    <span class="o">-</span><span class="i">e</span> <span class="i">subscriptionId</span><span class="o">=</span>{<span class="i">azure</span> <span class="i">subscripton</span> <span onmouseout="hideTip(event, 'fs6', 9)" onmouseover="showTip(event, 'fs6', 9)" class="i">id</span>} 
-    <span class="o">-</span><span class="i">e</span> <span class="i">clientId</span><span class="o">=</span>{<span class="i">application</span> <span onmouseout="hideTip(event, 'fs6', 10)" onmouseover="showTip(event, 'fs6', 10)" class="i">id</span>} 
-    <span class="o">-</span><span class="i">e</span> <span class="i">environment</span><span class="o">=</span>{<span class="i">postfix</span> <span class="o">-</span> <span class="i">prdc2018</span>}
-    <span class="o">-</span><span class="i">e</span> <span class="i">location</span><span class="o">=</span><span class="i">eastus</span>
-</code></pre></td>
-</tr>
-</table>
+<td class="snippet"><pre class="fssnip"><code lang="c#">public static Gen&lt;Person&gt; PersonUnder18()
+{
+    return
+        from name in ValidName()
+        from age in AgeUnder18()
+        from risk in Arb.Generate&lt;RiskFactor&gt;()
+        select new Person(name, age, risk);
+}
+</code></pre></td></tr></table>
+</section>
 </section>
 <section >
-<h3>More Detailed Instructions</h3>
+<section >
+<h3>Model Based Testing</h3>
+<p>Represent a complex system with a simplified model.</p>
+</section>
+<section >
+<h3>Command and Compare</h3>
 <ul>
-<li>
-Azure Active Directory App Registration
-<ul>
-<li><a href="https://safe-stack.github.io/docs/template-azure-registration/#creating-an-app-registration">https://safe-stack.github.io/docs/template-azure-registration/#creating-an-app-registration</a></li>
+<li>Generate sequence of commands</li>
+<li>Commands executed on model and the system</li>
+<li>Compare the intermediate results</li>
 </ul>
-</li>
-<li>
-Detailed deploy instructions
+</section>
+<section >
+<h3>Divergence Problems</h3>
 <ul>
-<li><a href="https://safe-stack.github.io/docs/template-appservice/">https://safe-stack.github.io/docs/template-appservice/</a></li>
-</ul>
-</li>
+<li>System under test</li>
+<li>Model</li>
+<li>Both above</li>
+<li>Specification</li>
 </ul>
 </section>
 </section>
+<section >
 <section >
 <h3>Summary</h3>
 <ul>
 <li>
-SAFE Stack
+Coming up with Properties can be difficult
 <ul>
-<li>Still early but powerful</li>
-<li>Azure deployments</li>
-<li>Community driven</li>
+<li>Forces us to better understand the domain</li>
 </ul>
 </li>
-<li>
-Elmish
-<ul>
-<li>Model-View-Update architecture</li>
-<li>Can also be used to develop mobile</li>
+<li>Not meant for building</li>
+<li>The more complex the problem the better</li>
+<li>Generative testing</li>
+<li>Model based testing</li>
 </ul>
-</li>
-<li>
-Saturn
-<ul>
-<li>Model-View-Controller</li>
-</ul>
-</li>
-</ul>
+</section>
+<section >
+<h3>Use Both</h3>
+<h4>Unit Test</h4>
+<p><img src="images/wile-coyote-fail.gif" alt="tdd" /></p>
+<h4>Property Based Test</h4>
+<p><img src="images/naruto-property-based.gif" alt="property-based-testing" /></p>
+</section>
 </section>
 <section >
 <h3>Extra Resources</h3>
 <ul>
-<li><a href="https://safe-stack.github.io">https://safe-stack.github.io</a></li>
-<li><a href="https://elmish.github.io">https://elmish.github.io</a></li>
-<li><a href="https://saturnframework.org">https://saturnframework.org</a></li>
-<li><a href="http://fable.io/repl/">http://fable.io/repl/</a></li>
 <li>
-<a href="https://github.com/fsprojects/Fabulous">https://github.com/fsprojects/Fabulous</a>
+F# for Fun and Profit
 <ul>
-<li>Elmish to Xamarin Forms</li>
+<li><a href="https://fsharpforfunandprofit.com/posts/property-based-testing/">https://fsharpforfunandprofit.com/posts/property-based-testing/</a></li>
+</ul>
+</li>
+<li>
+Testing the Hard Stuff and Staying Sane by John Hughes
+<ul>
+<li><a href="https://www.youtube.com/watch?v=zi0rHwfiX1Q">https://www.youtube.com/watch?v=zi0rHwfiX1Q</a></li>
+</ul>
+</li>
+<li>
+PropEr Testing
+<ul>
+<li><a href="https://propertesting.com">https://propertesting.com</a></li>
+</ul>
+</li>
+<li>
+Hypothesis
+<ul>
+<li><a href="https://hypothesis.readthedocs.io">https://hypothesis.readthedocs.io</a></li>
 </ul>
 </li>
 </ul>
 </section>
 <section >
 <h3>Thank You</h3>
+<ul>
+<li>
+Slides:
+<ul>
+<li><a href="https://shanecharles.github.io/intro-property-based-testing-prdc2018/">https://shanecharles.github.io/intro-property-based-testing-prdc2018/</a></li>
+</ul>
+</li>
+<li>
+Code:
+<ul>
+<li><a href="https://github.com/shanecharles/intro-property-based-testing-demos">https://github.com/shanecharles/intro-property-based-testing-demos</a></li>
+</ul>
+</li>
+</ul>
 <table class="pre"><tr><td class="lines"><pre class="fssnip"><span class="l">1: </span>
 <span class="l">2: </span>
 <span class="l">3: </span>
@@ -442,12 +434,12 @@ Saturn
 <span class="l">5: </span>
 <span class="l">6: </span>
 </pre></td>
-<td class="snippet"><pre class="fssnip highlighted"><code lang="fsharp"><span class="k">type</span> <span onmouseout="hideTip(event, 'fs1', 11)" onmouseover="showTip(event, 'fs1', 11)" class="i">ContactType</span> <span class="o">=</span> | <span onmouseout="hideTip(event, 'fs2', 12)" onmouseover="showTip(event, 'fs2', 12)" class="i">Twitter</span> | <span onmouseout="hideTip(event, 'fs3', 13)" onmouseover="showTip(event, 'fs3', 13)" class="i">Blog</span> | <span onmouseout="hideTip(event, 'fs4', 14)" onmouseover="showTip(event, 'fs4', 14)" class="i">GitHub</span>
+<td class="snippet"><pre class="fssnip highlighted"><code lang="fsharp"><span class="k">type</span> <span onmouseout="hideTip(event, 'fs1', 9)" onmouseover="showTip(event, 'fs1', 9)" class="i">ContactType</span> <span class="o">=</span> | <span onmouseout="hideTip(event, 'fs2', 10)" onmouseover="showTip(event, 'fs2', 10)" class="i">Twitter</span> | <span onmouseout="hideTip(event, 'fs3', 11)" onmouseover="showTip(event, 'fs3', 11)" class="i">Blog</span> | <span onmouseout="hideTip(event, 'fs4', 12)" onmouseover="showTip(event, 'fs4', 12)" class="i">GitHub</span>
 
-<span class="k">let</span> <span onmouseout="hideTip(event, 'fs5', 15)" onmouseover="showTip(event, 'fs5', 15)" class="f">getContactInfo</span> <span class="o">=</span> <span class="k">function</span>
-  | <span onmouseout="hideTip(event, 'fs2', 16)" onmouseover="showTip(event, 'fs2', 16)" class="p">Twitter</span> <span class="k">-&gt;</span> <span class="s">&quot;@dead_stroke&quot;</span>
-  | <span onmouseout="hideTip(event, 'fs3', 17)" onmouseover="showTip(event, 'fs3', 17)" class="p">Blog</span>    <span class="k">-&gt;</span> <span class="s">&quot;https://geekeh.com&quot;</span>
-  | <span onmouseout="hideTip(event, 'fs4', 18)" onmouseover="showTip(event, 'fs4', 18)" class="p">GitHub</span>  <span class="k">-&gt;</span> <span class="s">&quot;shanecharles&quot;</span>
+<span class="k">let</span> <span onmouseout="hideTip(event, 'fs5', 13)" onmouseover="showTip(event, 'fs5', 13)" class="f">getContactInfo</span> <span class="o">=</span> <span class="k">function</span>
+  | <span onmouseout="hideTip(event, 'fs2', 14)" onmouseover="showTip(event, 'fs2', 14)" class="p">Twitter</span> <span class="k">-&gt;</span> <span class="s">&quot;@dead_stroke&quot;</span>
+  | <span onmouseout="hideTip(event, 'fs3', 15)" onmouseover="showTip(event, 'fs3', 15)" class="p">Blog</span>    <span class="k">-&gt;</span> <span class="s">&quot;https://geekeh.com&quot;</span>
+  | <span onmouseout="hideTip(event, 'fs4', 16)" onmouseover="showTip(event, 'fs4', 16)" class="p">GitHub</span>  <span class="k">-&gt;</span> <span class="s">&quot;shanecharles&quot;</span>
 </code></pre></td>
 </tr>
 </table>
